@@ -24,12 +24,14 @@ Examples:
 */
 
 function vowelCount(str) {
+    const vowels = 'aeiou';
     return Array.from(str).reduce(function(accum, letter){
         if (accum[letter]) {
             accum[letter.toLowerCase()] += 1;
-        } else {
+        } else if (vowels.includes(letter.toLowerCase())) {
             accum[letter.toLowerCase()] = 1;
         };
+        return accum;
     }, {});
 };
 
